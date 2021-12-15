@@ -1,0 +1,19 @@
+1. ¿Qué compilador de lenguaje C++ usaste?
+- gcc
+
+2. ¿Qué versión del compilador de lenguaje C++ usaste?
+- 9.3.0
+
+3. ¿Qué es el diseño orientado a objetos?
+- es una disciplina que se encarga de definir los objetos y las interacciones entre ellos con la finalidad de resolver un problema de negocio que ya fue identificado previamente por el análisis y desarrollo orientado a objetos
+
+4. ¿Qué hace un AFD?
+- Es aquel que sólo puede estar en un único estado después de leer cualquier secuencia de entradas, hace referencia al hecho de que para cada
+entrada sólo existe uno y sólo un estado al que el autómata puede hacer la transición a partir de su estado actual. Reconoce lenguajes regulares.
+
+5. ¿Qué hace un AFN?
+- Un autómata finito “no determinista” (AFN) tiene la capacidad de estar en varios estados a la vez. Esta capacidad
+a menudo se expresa como la posibilidad de que el autómata “conjeture” algo acerca de su entrada.
+
+6. ¿Cuál es tu usuario de github?
+- f0rastero
