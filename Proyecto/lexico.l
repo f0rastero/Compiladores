@@ -4,7 +4,7 @@
 #include "sintactico.tab.h"
 %}
 /*
-Analizador Lexico
+Analizador Léxico
 */
 letras	[a-zA-Z]
 digito	[0-9]
@@ -13,22 +13,30 @@ espacio [-]
 
 %%
 
-["dragon"]{1}	         {return INT;}             
-["hada"]{1}	             {return CHAR;}           
-["carameloraro"]{1}	         {return INC;}           
-["levelup"]{1}[+]{2}	 {return SUMA;}   
-["leveldown"]{1}[-]{2}		    {return RESTA;}
-["piedraeterna"]{1}		    {return DEC;}
-["de"]{1}	    {return ASING;}
+["dragon"]	                {return INT;}             
+["hada"]	                {return CHAR;}
+["normal"]			        {return SHORT;}   
+["psiquico"]			    {return LONG;}         
+["carameloraro"]	        {return INC;}           
+["nivel"][+]{2}	            {return SUMA;}   
+["nivel"][-]{2}		        {return RESTA;}
+["piedraeterna"]		    {return DEC;}
+[->]	                    {return ASING;}
+[>]{2}		                {return MAYORQ;}
+[<]{2}		                {return MENORQ;}
+["reflejo"]		            {return IGUAL;}  
+["tipopoke"]		        {return CONST;}
+["abirirmenu"]		        {return SWITCH;}
+["psyduck"]			        {return FOR;}
+["mewtwo"]			        {return IF;}
+["antiparalizador"]			{return ELSE;}
+[\n]	                    {return '\n';}
+[>][&][<]                   {return AND;}
+[>][|][<]		            {return OR;}
+[>][!][<]	                {return NOT;}
+[|][|][|]	                {return CONCAT;}
 
-["incienso"]		    {return MAYORQ;}
-["repelente"]		    {return MENORQ;}
-
-["reflejo"]		    {return IGUAL;}  
-
-
-
-[1-9]+	        {yylval=atoi(yytext); return NUMERO;}
-
-
+[1-9]+	                    {yylval=atoi(yytext); return NUMERO;}
+{letras}+	                {return ID;}
+{letras}+{digito}*          {return ID;}
 %%
