@@ -77,5 +77,4 @@ cadena: ID				{printf("ID detectada\n");};
 
 cadena: NUMERO				{printf(" numero detectado\n");};
 
-cadena: INT					{printf(" INT\n");};
 %%

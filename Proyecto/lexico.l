@@ -13,19 +13,19 @@ espacio [-]
 
 %%
 
-"dragon"	                {return INT;}             
+"dragon"[<]{2}                {return INT;}             
 "hada"	                {return CHAR;}       
-"carameloraro"	        {return INC;}           
+"carameloraro"[<]{2}	        {return INC;}           
 "nivel"[+]{2}	            {return SUMA;}   
-["nivel"][-]{2}		        {return RESTA;}
-["piedraeterna"]		    {return DEC;}
+"nivel"[-]{2}		        {return RESTA;}
+"piedraeterna"[<]{2}		    {return DEC;}
 [-][>]	                    {return ASING;}
 [>]{2}		                {return MAYORQ;}
 [<]{2}		                {return MENORQ;}
-["reflejo"]		            {return IGUAL;}  
-["psyduck"]			        {return FOR;}
-["mewtwo"]			        {return IF;}
-["antiparalizador"]			{return ELSE;}
+"reflejo"[<]{2}		            {return IGUAL;}  
+"psyduck"[<]{2}			        {return FOR;}
+"mewtwo"[<]{2}			        {return IF;}
+"antiparalizador"[<]{2}			{return ELSE;}
 [\n]	                    {return '\n';}
 [>][&][<]                   {return AND;}
 [>][|][<]		            {return OR;}
@@ -34,5 +34,7 @@ espacio [-]
 [1-9]+	                    {yylval=atoi(yytext); return NUMERO;}
 {letras}+	                {return ID;}
 {letras}+{digito}*          {return ID;}
-[b]{1}                         {return SALIDA;}
+[>]"b"[<]                         {return SALIDA;}
 %%
+
+
