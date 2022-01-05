@@ -13,20 +13,16 @@ espacio [-]
 
 %%
 
-["dragon"]	                {return INT;}             
-["hada"]	                {return CHAR;}
-["normal"]			        {return SHORT;}   
-["psiquico"]			    {return LONG;}         
-["carameloraro"]	        {return INC;}           
-["nivel"][+]{2}	            {return SUMA;}   
+"dragon"	                {return INT;}             
+"hada"	                {return CHAR;}       
+"carameloraro"	        {return INC;}           
+"nivel"[+]{2}	            {return SUMA;}   
 ["nivel"][-]{2}		        {return RESTA;}
 ["piedraeterna"]		    {return DEC;}
-[->]	                    {return ASING;}
+[-][>]	                    {return ASING;}
 [>]{2}		                {return MAYORQ;}
 [<]{2}		                {return MENORQ;}
 ["reflejo"]		            {return IGUAL;}  
-["tipopoke"]		        {return CONST;}
-["abirirmenu"]		        {return SWITCH;}
 ["psyduck"]			        {return FOR;}
 ["mewtwo"]			        {return IF;}
 ["antiparalizador"]			{return ELSE;}
@@ -35,8 +31,8 @@ espacio [-]
 [>][|][<]		            {return OR;}
 [>][!][<]	                {return NOT;}
 [|][|][|]	                {return CONCAT;}
-
 [1-9]+	                    {yylval=atoi(yytext); return NUMERO;}
 {letras}+	                {return ID;}
 {letras}+{digito}*          {return ID;}
+[b]{1}                         {return SALIDA;}
 %%
